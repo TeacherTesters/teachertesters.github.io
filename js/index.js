@@ -14,11 +14,11 @@ function Teacher(name, image, grade, subject, location, certifications, experien
 }
 
 var teachers = [];
-teachers.push(new Teacher("Elena Olsen", "http://media-cache-ec0.pinimg.com/avatars/elenabo-88_140.jpg", 11, "English", "Kirkland, WA", [], 12, 40, "F"));
-teachers.push(new Teacher("Elena Olsen", "http://www.montana.edu/ttt/pictures/teacher1.jpg", 11, "English", "Kirkland, WA", [], 12, 40, "F"));
-teachers.push(new Teacher("Elena Olsen", "http://2.bp.blogspot.com/_1kBfY29eiB4/TD9Ys6x9FYI/AAAAAAAAAEk/pDJpyJkRAII/s1600/teacher.jpg", 11, "English", "Kirkland, WA", [], 12, 40, "F"));
-teachers.push(new Teacher("Elena Olsen", "http://thscnyc.org/managed_images/sif10225.225782846266003821356.jpg", 11, "English", "Kirkland, WA", [], 12, 40, "F"));
-teachers.push(new Teacher("Elena Olsen", "http://1.bp.blogspot.com/-1g5NK5J8dk8/UAn6k8_OuQI/AAAAAAAACqE/_2WD9KLNh7M/s1600/615_300_Teacher.jpg", 11, "English", "Kirkland, WA", [], 12, 40, "F"));
+teachers.push(new Teacher("Elena Olsen", "http://media-cache-ec0.pinimg.com/avatars/elenabo-88_140.jpg", "11", "English", "Kirkland, WA", [], "12", "40", "F"));
+teachers.push(new Teacher("Elena Olsen", "http://www.montana.edu/ttt/pictures/teacher1.jpg", "11", "English", "Kirkland, WA", [], "12", "40", "F"));
+teachers.push(new Teacher("Elena Olsen", "http://2.bp.blogspot.com/_1kBfY29eiB4/TD9Ys6x9FYI/AAAAAAAAAEk/pDJpyJkRAII/s1600/teacher.jpg", "11", "English", "Kirkland, WA", [], "12", "40", "F"));
+teachers.push(new Teacher("Elena Olsen", "http://thscnyc.org/managed_images/sif10225.225782846266003821356.jpg", "11", "English", "Kirkland, WA", [], "12", "40", "F"));
+teachers.push(new Teacher("Elena Olsen", "http://1.bp.blogspot.com/-1g5NK5J8dk8/UAn6k8_OuQI/AAAAAAAACqE/_2WD9KLNh7M/s1600/615_300_Teacher.jpg", "11", "English", "Kirkland, WA", [], "12", "40", "F"));
 
 var grades = new Set();
 
@@ -85,7 +85,7 @@ function filter(type){
     $(".header").append(initialString);
     var array = map[type];
     for(var i = 0; i < array.length; i++){
-        $(".values").append('<li class="pure-menu-item pure-menu-selected"><a onclick=filterBy(' + type + "," array[i] + ') class="pure-menu-link">' + array[i] + '</a></li>');
+        $(".values").append('<li class="pure-menu-item pure-menu-selected"><a onclick=filterBy("' + type + '","' + array[i] + '") class="pure-menu-link">' + array[i] + '</a></li>');
     }
 }
 
