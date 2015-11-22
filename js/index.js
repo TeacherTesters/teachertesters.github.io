@@ -86,4 +86,4 @@ function filterByGrade(grade){
     }
 }
 
-function filter()
+function filter(){}
