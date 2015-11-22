@@ -70,24 +70,44 @@ var agesArray = Array.from(ages);
 
 var gendersArray = Array.from(grades);
 
-function gradeFilter(){
-    var initialString = filterBarStart + "Grade" + filterBar;
+var map = {grade: gradesArray, subject: subjectsArray, location: locationsArray, certifications: certificationsArray, experience: experiencesArray, age: agesArray, gender: gendersArray};
+
+// function gradeFilter(){
+//     var initialString = filterBarStart + "Grade" + filterBar;
+//     $(".header").append(initialString);
+//     for(var i = 0; i < gradesArray.length; i++){
+//         $(".values").append('<li class="pure-menu-item pure-menu-selected"><a onclick=filterByGrade(' + gradesArray[i] + ') class="pure-menu-link">' + gradesArray[i] + '</a></li>')
+//     }
+// }
+
+function filter(type){
+    var initialString = filterBarStart + type + filterBar;
     $(".header").append(initialString);
-    for(var i = 0; i < gradesArray.length; i++){
-        $(".values").append('<li class="pure-menu-item pure-menu-selected"><a onclick=filterByGrade(' + gradesArray[i] + ') class="pure-menu-link">' + gradesArray[i] + '</a></li>')
+    var array = map[type];
+    for(var i = 0; i < array.length; i++){
+        $(".values").append('<li class="pure-menu-item pure-menu-selected"><a onclick=filterBy(' + type + "," array[i] + ') class="pure-menu-link">' + array[i] + '</a></li>')
     }
 }
 
-function filterByGrade(grade){
+// function filterByGrade(grade){
+//     var pointer = 1;
+//     var done = false;
+//     for(var i = 0; i < teachers.length; i++){
+//         if(teachers[i].grade === grade){
+//             $(".teacher" + pointer + "img").attr("src", teachers[i].image);
+//             $('.teacher' + pointer + ' aside span a').html(teachers[i].name);
+//             pointer++;
+//         }
+//     }
+// }
+
+function filterBy(type, value){
     var pointer = 1;
-    var done = false;
     for(var i = 0; i < teachers.length; i++){
-        if(teachers[i].grade === grade){
+        if(teachers[i][type] === value){
             $(".teacher" + pointer + "img").attr("src", teachers[i].image);
             $('.teacher' + pointer + ' aside span a').html(teachers[i].name);
             pointer++;
         }
     }
 }
-
-function filter(){}
