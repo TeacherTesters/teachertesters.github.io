@@ -84,7 +84,7 @@ function filterByGrade(grade){
     for(var i = 0; i < teachers.length; i++){
         if(teachers[i].grade === grade){
             $(".teacher" + pointer + "img").attr("src", teachers[i].image);
-            $('.teacher' + pointer + ' aside span a').html(teacher[i].name);
+            $('.teacher' + pointer + ' aside span a').html(teachers[i].name);
             pointer++;
         }
     }
