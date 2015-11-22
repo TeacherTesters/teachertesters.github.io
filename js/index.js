@@ -85,7 +85,7 @@ function filter(type){
     $(".header").append(initialString);
     var array = map[type];
     for(var i = 0; i < array.length; i++){
-        $(".values").append('<li class="pure-menu-item pure-menu-selected"><a onclick=filterBy(' + type + "," array[i] + ') class="pure-menu-link">' + array[i] + '</a></li>')
+        $(".values").append('<li class="pure-menu-item pure-menu-selected"><a onclick=filterBy(' + type + "," array[i] + ') class="pure-menu-link">' + array[i] + '</a></li>');
     }
 }
 
